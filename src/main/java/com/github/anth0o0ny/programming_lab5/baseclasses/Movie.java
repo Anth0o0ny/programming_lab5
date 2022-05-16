@@ -32,7 +32,7 @@ public class Movie implements Comparable<Movie> {
 
     @Override
     public String toString() {
-        return name;
+        return "Фильм: " + name + ", id = " + id ;
     }
 
     public long getId() {
