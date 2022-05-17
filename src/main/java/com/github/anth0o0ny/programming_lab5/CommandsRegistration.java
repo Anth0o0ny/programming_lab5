@@ -12,5 +12,6 @@ public class CommandsRegistration {
        invoker.registration("show", new Show(receiver));
        invoker.registration("info", new Info(receiver));
        invoker.registration("shuffle", new Shuffle(receiver));
+       invoker.registration("print_descending", new PrintDescending(receiver));
     }
 }
