@@ -13,5 +13,6 @@ public class CommandsRegistration {
        invoker.registration("info", new Info(receiver));
        invoker.registration("shuffle", new Shuffle(receiver));
        invoker.registration("print_descending", new PrintDescending(receiver));
+       invoker.registration("group_counting_by_tagline", new GroupCountingByTagline(receiver));
     }
 }

@@ -2,8 +2,7 @@ package com.github.anth0o0ny.programming_lab5.patterncommands;
 
 import com.github.anth0o0ny.programming_lab5.baseclasses.Movie;
 
-import java.util.Collections;
-import java.util.Stack;
+import java.util.*;
 
 public class Receiver {
 
@@ -71,5 +70,23 @@ public class Receiver {
             return stringBuilder.toString();
         }
     }
-}
+
+    public String groupCountingByTagline(Stack<Movie> collection) {
+        if (collection.isEmpty()) {
+            return "Коллекция пуста.";
+        } else {
+            ArrayList<String> list = new ArrayList<>();
+            for (Movie movie : collection) {
+                list.add(movie.getTagline());
+            }
+
+            Set<String> st = new HashSet<>(list);
+            for (String s : st)
+                System.out.println("\"" + s + "\""  + ": " + Collections.frequency(list, s));
+            }
+            return "";
+        }
+    }
+
+
 
