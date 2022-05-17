@@ -10,5 +10,7 @@ public class CommandsRegistration {
        invoker.registration("help", new Help(receiver));
        invoker.registration("clear", new Clear(receiver));
        invoker.registration("show", new Show(receiver));
+       invoker.registration("info", new Info(receiver));
+       invoker.registration("shuffle", new Shuffle(receiver));
     }
 }
