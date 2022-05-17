@@ -2,11 +2,11 @@ package com.github.anth0o0ny.programming_lab5.baseclasses;
 
 public enum Color {
 
-    RED("Ярость"),
-    BLACK("Страх"),
-    YELLOW("Расслабление"),
-    ORANGE("Юмор"),
-    WHITE("Любовь");
+    RED("Красный"),
+    BLACK("Черный"),
+    YELLOW("Желтый"),
+    ORANGE("Оранжевый"),
+    WHITE("Белый");
 
     private final String title;
     Color(String title){this.title = title;}
