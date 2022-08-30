@@ -1,18 +1,20 @@
 package com.github.anth0o0ny.programming_lab5.baseclasses;
 
 import java.time.LocalDateTime;
+import java.util.Date;
+
 public class Movie implements Comparable<Movie> {
     private long id; //Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
     private String name; //Поле не может быть null, Строка не может быть пустой
     private Coordinates coordinates; //Поле не может быть null
-    private java.time.LocalDateTime creationDate; //Поле не может быть null, Значение этого поля должно генерироваться автоматически
+    private java.util.Date creationDate; //Поле не может быть null, Значение этого поля должно генерироваться автоматически
     private Long oscarsCount; //Значение поля должно быть больше 0, Поле не может быть null
     private long budget; //Значение поля должно быть больше 0
     private String tagline; //Длина строки не должна быть больше 158, Поле может быть null
     private MpaaRating mpaaRating; //Поле может быть null
     private Person screenwriter;
 
-    public Movie(long id, String name, Coordinates coordinates, LocalDateTime creationDate, Long oscarsCount,
+    public Movie(long id, String name, Coordinates coordinates, java.util.Date creationDate, Long oscarsCount,
                  long budget, String tagline, MpaaRating mpaaRating, Person screenwriter) {
         setId(id);
         setName(name);
@@ -24,6 +26,8 @@ public class Movie implements Comparable<Movie> {
         setMpaaRating(mpaaRating);
         setScreenwriter(screenwriter);
     }
+
+
 
     @Override
     public int compareTo(Movie movie) {
@@ -59,11 +63,11 @@ public class Movie implements Comparable<Movie> {
         this.coordinates = coordinates;
     }
 
-    public LocalDateTime getCreationDate() {
+    public java.util.Date getCreationDate() {
         return creationDate;
     }
 
-    public void setCreationDate(LocalDateTime creationDate) {
+    public void setCreationDate(java.util.Date creationDate) {
         this.creationDate = creationDate;
     }
 

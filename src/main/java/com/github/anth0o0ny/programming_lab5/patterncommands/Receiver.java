@@ -1,11 +1,21 @@
 package com.github.anth0o0ny.programming_lab5.patterncommands;
 
+//import com.github.anth0o0ny.programming_lab5.ObjectsAdder;
 import com.github.anth0o0ny.programming_lab5.baseclasses.Movie;
 
 import java.util.*;
 
 public class Receiver {
 
+    private final java.util.Date creationDate;
+
+
+    public Receiver(){
+        creationDate = new Date();
+    }
+
+
+    private String argument;
 
     public String exit() {
         System.out.println("Спасибо за работу, до свидания!");
@@ -40,7 +50,7 @@ public class Receiver {
     public String info(Stack<Movie> collection) {
         return "Тип коллекции: " + collection.getClass() +
                 "\nКоличество элементов: " + collection.size() +
-                "\nДата инициализации: " + "пока нет";
+                "\nДата инициализации: " + creationDate;
     }
 
     public String shuffle(Stack<Movie> collection) {
@@ -82,11 +92,55 @@ public class Receiver {
 
             Set<String> st = new HashSet<>(list);
             for (String s : st)
-                System.out.println("\"" + s + "\""  + ": " + Collections.frequency(list, s));
+                System.out.println("\"" + s + "\"" + ": " + Collections.frequency(list, s));
+        }
+        return "";
+    }
+
+    public String removeById(Stack<Movie> collection, String argument) {
+
+        this.argument = argument;
+        String str = "";
+        if (collection.isEmpty()) {
+            return "Коллекция пуста.";
+        } else {
+            for (Movie movie : collection) {
+                if (String.valueOf(movie.getId()).equals(argument)) {
+                    collection.remove(movie);
+                    str = "Удален объект с id = " + argument + ".";
+                    break;
+
+                } else {
+                    str = "Введите существующее значение id";
+                }
             }
-            return "";
+            return str;
         }
     }
+
+    public String removeAllByScreenwriter(Stack<Movie> collection, String argument) {
+        boolean flag = false;
+        if (collection.isEmpty()) {
+            return "Коллекция пуста.";
+        } else {
+            List<Movie> found = new ArrayList<>();
+            for (Movie movie : collection) {
+                if (String.valueOf(movie.getScreenwriter()).equals(argument)) {
+                    found.add(movie);
+                    flag = true;
+                }
+            }
+            if (flag) {
+                collection.removeAll(found);
+                return "Все элементы со значением поля screenwriter = " + argument + " удалены.";
+            } else {
+                return "Элементов со значением поля screenwriter = " + argument + " не найдено.";
+            }
+        }
+    }
+}
+
+
 
 
 

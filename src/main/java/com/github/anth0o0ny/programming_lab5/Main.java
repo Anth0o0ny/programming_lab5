@@ -1,31 +1,52 @@
 package com.github.anth0o0ny.programming_lab5;
 
 import com.github.anth0o0ny.programming_lab5.baseclasses.*;
+import com.github.anth0o0ny.programming_lab5.baseclasses.Color;
 import com.github.anth0o0ny.programming_lab5.patterncommands.Invoker;
 import com.github.anth0o0ny.programming_lab5.patterncommands.Receiver;
 
-import java.time.LocalDateTime;
-import java.util.Collections;
-import java.util.Scanner;
-import java.util.Stack;
-import java.util.Vector;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.List;
+import java.util.Date;
+import java.util.*;
+import java.util.stream.Stream;
 
 public class Main {
+
+
     public static void main(String[] args) {
 
         Stack<Movie> collection = new Stack<>();
-        Movie movie = new Movie(1, "Выживший", new Coordinates(4D, 5F), LocalDateTime.now(),
+
+
+        // Test input
+        Movie movie = new Movie(1, "Выживший", new Coordinates(4D, 5F), new Date(),
                 8L, 888, "Выжить любой ценой", MpaaRating.NC_17, new Person("Ди каприо", 6,
                Color.BLACK, Country.GERMANY));
-        Movie movie2 = new Movie(2, "Я - легенда", new Coordinates(6D, 9F), LocalDateTime.now(),
-                8L, 888, "Выжить любой ценой", MpaaRating.NC_17, new Person("Вил Смит", 6,
+        Movie movie2 = new Movie(2, "Я - легенда", new Coordinates(6D, 9F), new Date(),
+                8L, 888, "Выжить любой ценой", MpaaRating.NC_17, new Person("Bobs", 6,
                 Color.BLACK, Country.GERMANY));
-        Movie movie3 = new Movie(3, "Форрест Гамп", new Coordinates(4D, 5F), LocalDateTime.now(),
-                8L, 888, "Ран, Форрест, Ран.", MpaaRating.NC_17, new Person("Том Хэнкс", 6,
+        Movie movie3 = new Movie(3, "Форрест Гамп", new Coordinates(4D, 5F), new Date(),
+                8L, 888, "Ран, Форрест, Ран.", MpaaRating.NC_17, new Person("Bobs", 6,
                 Color.BLACK, Country.GERMANY));
         collection.add(movie);
         collection.add(movie2);
         collection.add(movie3);
+        
+
+
+//        Box p1 = Box.createHorizontalBox();
+//        JPanel p2 = new JPanel();
+//        p2.setLayout(new GridLayout(3, 2));
+//        p2.add(new JLabel("5"));
+//        p1.add(new JLabel("6"));
+//        p1.add(new JLabel("7"));
+//        p2.add(new JLabel("8"));
+//        p2.add(new JLabel("9"));
+//        p1.add(p2);
+//        System.out.println(p2);
+
 
 
         Invoker invoker = new Invoker();
@@ -52,7 +73,7 @@ public class Main {
                 String argument = input.trim().split(" ")[1];
                 output = invoker.execute(invoker, command, collection, argument);
             } else {
-                output = "Недопустимый формат команды. Введите команду без аргументов или же с одним аргументом";
+                output = "Недопустимый формат команды. Введите команду без аргументов или же с одним аргументом ";
             }
             if (output == null)
                 break;
