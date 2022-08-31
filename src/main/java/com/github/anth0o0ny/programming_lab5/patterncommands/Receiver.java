@@ -2,6 +2,7 @@ package com.github.anth0o0ny.programming_lab5.patterncommands;
 
 //import com.github.anth0o0ny.programming_lab5.ObjectsAdder;
 import com.github.anth0o0ny.programming_lab5.baseclasses.Movie;
+import com.github.anth0o0ny.programming_lab5.movieMaking.AddMovie;
 
 import java.util.*;
 
@@ -10,7 +11,7 @@ public class Receiver {
     private final java.util.Date creationDate;
 
 
-    public Receiver(){
+    public Receiver() {
         creationDate = new Date();
     }
 
@@ -137,6 +138,10 @@ public class Receiver {
                 return "Элементов со значением поля screenwriter = " + argument + " не найдено.";
             }
         }
+    }
+
+    public String add(Stack<Movie> collection) {
+        return AddMovie.addMovie(collection);
     }
 }
 

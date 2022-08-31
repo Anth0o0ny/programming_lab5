@@ -14,5 +14,8 @@ public class CommandsRegistration {
        invoker.registration("shuffle", new Shuffle(receiver));
        invoker.registration("print_descending", new PrintDescending(receiver));
        invoker.registration("group_counting_by_tagline", new GroupCountingByTagline(receiver));
+       invoker.registration("remove_by_id", new RemoveById(receiver));
+       invoker.registration("remove_all_by_screenwriter", new RemoveAllByScreenwriter(receiver));
+       invoker.registration("add", new Add(receiver));
     }
 }
