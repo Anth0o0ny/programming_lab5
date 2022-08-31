@@ -7,9 +7,10 @@ import com.github.anth0o0ny.programming_lab5.patterncommands.Receiver;
 
 import java.util.Stack;
 
-public class Clear implements Command{
+public class Clear implements Command {
 
     private final Receiver receiver;
+
     public Clear(Receiver receiver) {
         this.receiver = receiver;
     }

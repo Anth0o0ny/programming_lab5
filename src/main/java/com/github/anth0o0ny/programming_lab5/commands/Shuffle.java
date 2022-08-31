@@ -9,9 +9,11 @@ import java.util.Stack;
 
 public class Shuffle implements Command {
     private final Receiver receiver;
+
     public Shuffle(Receiver receiver) {
         this.receiver = receiver;
     }
+
     @Override
     public String execute(Invoker invoker, Stack<Movie> collection, String argument) {
         if (argument.isEmpty()) {

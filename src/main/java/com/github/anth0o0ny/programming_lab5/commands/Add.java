@@ -9,9 +9,11 @@ import java.util.Stack;
 
 public class Add implements Command {
     private final Receiver receiver;
+
     public Add(Receiver receiver) {
         this.receiver = receiver;
     }
+
     @Override
     public String execute(Invoker invoker, Stack<Movie> collection, String argument) {
         if (argument.isEmpty()) {
@@ -20,6 +22,7 @@ public class Add implements Command {
             return "Введите команду без аргумента.";
         }
     }
+
     @Override
     public String getHelp() {
         return "Введите \"add\", чтобы добавить элемент в коллекцию.";

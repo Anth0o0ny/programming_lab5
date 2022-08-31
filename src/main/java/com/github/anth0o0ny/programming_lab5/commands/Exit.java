@@ -9,14 +9,16 @@ import java.util.Stack;
 
 public class Exit implements Command {
     private final Receiver receiver;
-    public Exit(Receiver receiver){
+
+    public Exit(Receiver receiver) {
         this.receiver = receiver;
     }
+
     @Override
     public String execute(Invoker invoker, Stack<Movie> collection, String argument) {
         if (argument.isEmpty()) {
             return receiver.exit();
-        } else{
+        } else {
             return "Введите команду без аргумента.";
         }
     }

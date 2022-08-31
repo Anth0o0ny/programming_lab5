@@ -11,18 +11,27 @@ public enum MpaaRating {
     NC_17("Лицам до 18 лет просмотр запрещен");
 
     private final String title;
-    MpaaRating(String title){this.title = title;}
 
-    public static MpaaRating chooseRating(){
+    MpaaRating(String title) {
+        this.title = title;
+    }
+
+    public static MpaaRating chooseRating() {
+
         Scanner sc = new Scanner(System.in);
+
         System.out.println("Выберете рейтинг фильма : ");
-        for (byte i = 0; MpaaRating.values().length > i ; i++){
+
+        for (byte i = 0; MpaaRating.values().length > i; i++) {
             System.out.println((i + 1) + ". " + MpaaRating.values()[i]);
         }
+
         byte rateNum = sc.nextByte();
         return MpaaRating.values()[rateNum - 1];
     }
 
     @Override
-    public String toString() {return title ;}
+    public String toString() {
+        return title;
+    }
 }

@@ -10,9 +10,11 @@ import java.util.Stack;
 public class RemoveById implements Command {
 
     private final Receiver receiver;
+
     public RemoveById(Receiver receiver) {
         this.receiver = receiver;
     }
+
     @Override
     public String execute(Invoker invoker, Stack<Movie> collection, String argument) {
         if (!argument.isEmpty()) {

@@ -9,15 +9,15 @@ import java.util.*;
 
 public class AddMovie {
 
-    public static String addMovie(Stack<Movie> collection){
+    public static String addMovie(Stack<Movie> collection) {
         Movie makingMovie = makeMovie();
         collection.push(makingMovie);
         return "Город добавлен в коллекцию";
     }
 
-    public static String AddMovieIfMin(Stack<Movie> collection){
+    public static String AddMovieIfMin(Stack<Movie> collection) {
         Movie makingMovie = makeMovie();
-        if (makingMovie.compareTo(Collections.min(collection)) < 0){
+        if (makingMovie.compareTo(Collections.min(collection)) < 0) {
             collection.push(makingMovie);
             return "Город добавлен в коллекцию";
         } else {
@@ -25,7 +25,7 @@ public class AddMovie {
         }
     }
 
-    public static Movie makeMovie(){
+    public static Movie makeMovie() {
         Scanner sc = new Scanner(System.in);
         long id = (long) (Math.random() * 1_000_000_000 + 1);
 
@@ -36,7 +36,7 @@ public class AddMovie {
         Double x = sc.nextDouble();
         System.out.println("Введите координату y: ");
         Float y = sc.nextFloat();
-        Coordinates coordinates = new Coordinates(x,y);
+        Coordinates coordinates = new Coordinates(x, y);
 
         java.util.Date date = new Date();
 

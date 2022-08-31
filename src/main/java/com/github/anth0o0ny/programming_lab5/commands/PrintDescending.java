@@ -10,6 +10,7 @@ import java.util.Stack;
 public class PrintDescending implements Command {
 
     private final Receiver receiver;
+
     public PrintDescending(Receiver receiver) {
         this.receiver = receiver;
     }
@@ -22,7 +23,6 @@ public class PrintDescending implements Command {
             return "Введите команду без аргумента.";
         }
     }
-
 
     @Override
     public String getHelp() {

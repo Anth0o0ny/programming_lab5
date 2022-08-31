@@ -10,6 +10,7 @@ import java.util.Stack;
 public class Info implements Command {
 
     private final Receiver receiver;
+
     public Info(Receiver receiver) {
         this.receiver = receiver;
     }
@@ -21,8 +22,6 @@ public class Info implements Command {
         } else {
             return "Введите команду без аргумента.";
         }
-
-
     }
 
     @Override

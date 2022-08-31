@@ -53,8 +53,8 @@ public class Person {
         this.nationality = nationality;
     }
 
-
     public static Person ctreatePerson() {
+
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Введите имя персонажа: ");

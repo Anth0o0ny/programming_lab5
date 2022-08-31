@@ -25,15 +25,14 @@ public class Movie implements Comparable<Movie> {
     }
 
 
-
     @Override
     public int compareTo(Movie movie) {
-       return (this.getName().compareTo(movie.getName()));
+        return (this.getName().compareTo(movie.getName()));
     }
 
     @Override
     public String toString() {
-        return "Фильм: " + name + ", id = " + id ;
+        return "Фильм: " + name + ", id = " + id;
     }
 
     public long getId() {

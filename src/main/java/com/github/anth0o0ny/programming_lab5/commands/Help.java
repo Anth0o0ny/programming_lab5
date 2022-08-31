@@ -22,6 +22,7 @@ public class Help implements Command {
             return "Введите команду без аргумента.";
         }
     }
+
     @Override
     public String getHelp() {
         return "Введите \"help\", чтобы получить справку по командам.";
