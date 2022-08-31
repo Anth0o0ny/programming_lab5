@@ -1,8 +1,5 @@
 package com.github.anth0o0ny.programming_lab5.baseclasses;
 
-import java.time.LocalDateTime;
-import java.util.Date;
-
 public class Movie implements Comparable<Movie> {
     private long id; //Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
     private String name; //Поле не может быть null, Строка не может быть пустой
@@ -31,7 +28,7 @@ public class Movie implements Comparable<Movie> {
 
     @Override
     public int compareTo(Movie movie) {
-        return (int) (oscarsCount - movie.getOscarsCount());
+       return (this.getName().compareTo(movie.getName()));
     }
 
     @Override
@@ -111,3 +108,4 @@ public class Movie implements Comparable<Movie> {
         this.screenwriter = screenwriter;
     }
 }
+
