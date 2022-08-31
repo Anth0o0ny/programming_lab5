@@ -143,6 +143,9 @@ public class Receiver {
     public String add(Stack<Movie> collection) {
         return AddMovie.addMovie(collection);
     }
+    public  String addIfMin(Stack<Movie> collection){
+        return AddMovie.AddMovieIfMin(collection);
+    }
 }
 
 

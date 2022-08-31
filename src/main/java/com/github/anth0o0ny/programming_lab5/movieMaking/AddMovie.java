@@ -5,9 +5,7 @@ import com.github.anth0o0ny.programming_lab5.baseclasses.Movie;
 import com.github.anth0o0ny.programming_lab5.baseclasses.MpaaRating;
 import com.github.anth0o0ny.programming_lab5.baseclasses.Person;
 
-import java.util.Date;
-import java.util.Scanner;
-import java.util.Stack;
+import java.util.*;
 
 public class AddMovie {
 
@@ -15,6 +13,16 @@ public class AddMovie {
         Movie makingMovie = makeMovie();
         collection.push(makingMovie);
         return "Город добавлен в коллекцию";
+    }
+
+    public static String AddMovieIfMin(Stack<Movie> collection){
+        Movie makingMovie = makeMovie();
+        if (makingMovie.compareTo(Collections.min(collection)) < 0){
+            collection.push(makingMovie);
+            return "Город добавлен в коллекцию";
+        } else {
+            return "Город добавить не удалось";
+        }
     }
 
     public static Movie makeMovie(){
