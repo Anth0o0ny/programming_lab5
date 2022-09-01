@@ -1,8 +1,9 @@
 package com.github.anth0o0ny.programming_lab5.patterncommands;
 
-//import com.github.anth0o0ny.programming_lab5.ObjectsAdder;
+
 import com.github.anth0o0ny.programming_lab5.baseclasses.Movie;
 import com.github.anth0o0ny.programming_lab5.movieMaking.AddMovie;
+import com.sun.jdi.connect.Connector;
 
 import java.util.*;
 
@@ -143,8 +144,36 @@ public class Receiver {
     public String add(Stack<Movie> collection) {
         return AddMovie.addMovie(collection);
     }
-    public  String addIfMin(Stack<Movie> collection){
+
+    public String addIfMin(Stack<Movie> collection) {
         return AddMovie.AddMovieIfMin(collection);
+    }
+
+    public String update(Stack<Movie> collection, String argument){
+        String str = "";
+
+        for (Movie movie : collection) {
+
+
+
+            if (String.valueOf(movie.getId()).equals(argument)) {
+
+                  long id = movie.getId();
+                  Movie updateMovie = AddMovie.makeMovie();
+                  updateMovie.setId(id);
+                  collection.setElementAt(updateMovie, (collection.size() - collection.search(movie)));
+
+                  str = "Объект с id = " + id + "  изменен.";
+
+                break;
+
+            } else {
+
+                str = "Объект с указанным id не найден.";
+
+            }
+        } return str;
+
     }
 }
 

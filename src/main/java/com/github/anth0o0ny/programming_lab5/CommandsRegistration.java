@@ -18,5 +18,6 @@ public class CommandsRegistration {
         invoker.registration("remove_all_by_screenwriter", new RemoveAllByScreenwriter(receiver));
         invoker.registration("add", new Add(receiver));
         invoker.registration("add_if_min", new AddIfMin(receiver));
+        invoker.registration("update", new UpdateById(receiver));
     }
 }
