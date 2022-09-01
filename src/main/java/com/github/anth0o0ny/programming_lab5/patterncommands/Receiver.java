@@ -3,7 +3,6 @@ package com.github.anth0o0ny.programming_lab5.patterncommands;
 
 import com.github.anth0o0ny.programming_lab5.baseclasses.Movie;
 import com.github.anth0o0ny.programming_lab5.movieMaking.AddMovie;
-import com.sun.jdi.connect.Connector;
 
 import java.util.*;
 
@@ -16,8 +15,6 @@ public class Receiver {
         creationDate = new Date();
     }
 
-
-    private String argument;
 
     public String exit() {
         System.out.println("Спасибо за работу, до свидания!");
@@ -101,7 +98,6 @@ public class Receiver {
 
     public String removeById(Stack<Movie> collection, String argument) {
 
-        this.argument = argument;
         String str = "";
         if (collection.isEmpty()) {
             return "Коллекция пуста.";
@@ -173,7 +169,21 @@ public class Receiver {
 
             }
         } return str;
+    }
+    public String insertAt(Stack<Movie> collection, String argument){
 
+        String str;
+        int index = Integer.parseInt(argument);
+
+        if ((collection.size() - index > 0)){
+            Movie updateMovie = AddMovie.makeMovie();
+            collection.insertElementAt(updateMovie,index);
+
+            str = "Элемент внесен в коллекцию";
+        } else{
+            str = "Введен некорректный индекс";
+        }
+        return str;
     }
 }
 
