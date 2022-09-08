@@ -1,5 +1,6 @@
 package com.github.anth0o0ny.programming_lab5.baseclasses;
 
+import javax.xml.bind.annotation.XmlElement;
 import java.util.Scanner;
 
 public class Person {
@@ -16,6 +17,8 @@ public class Person {
         setNationality(nationality);
     }
 
+    public Person(){}
+
     @Override
     public String toString() {
         return name;
@@ -25,6 +28,7 @@ public class Person {
         return name;
     }
 
+    @XmlElement
     public void setName(String name) {
         this.name = name;
     }
@@ -33,6 +37,7 @@ public class Person {
         return height;
     }
 
+    @XmlElement
     public void setHeight(float height) {
         this.height = height;
     }
@@ -41,6 +46,7 @@ public class Person {
         return hairColor;
     }
 
+    @XmlElement
     public void setHairColor(Color hairColor) {
         this.hairColor = hairColor;
     }
@@ -49,6 +55,7 @@ public class Person {
         return nationality;
     }
 
+    @XmlElement
     public void setNationality(Country nationality) {
         this.nationality = nationality;
     }

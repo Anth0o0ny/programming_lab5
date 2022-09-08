@@ -1,5 +1,11 @@
 package com.github.anth0o0ny.programming_lab5.baseclasses;
 
+import javax.xml.bind.annotation.*;
+
+
+@XmlRootElement(name = "movie")
+@XmlAccessorType(XmlAccessType.FIELD)
+
 public class Movie implements Comparable<Movie> {
     private long id; //Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
     private String name; //Поле не может быть null, Строка не может быть пустой
@@ -10,6 +16,7 @@ public class Movie implements Comparable<Movie> {
     private String tagline; //Длина строки не должна быть больше 158, Поле может быть null
     private MpaaRating mpaaRating; //Поле может быть null
     private Person screenwriter;
+
 
     public Movie(long id, String name, Coordinates coordinates, java.util.Date creationDate, Long oscarsCount,
                  long budget, String tagline, MpaaRating mpaaRating, Person screenwriter) {
@@ -23,6 +30,8 @@ public class Movie implements Comparable<Movie> {
         setMpaaRating(mpaaRating);
         setScreenwriter(screenwriter);
     }
+    public Movie(){}
+
 
 
     @Override
@@ -39,6 +48,7 @@ public class Movie implements Comparable<Movie> {
         return id;
     }
 
+//    @XmlElement
     public void setId(long id) {
         this.id = id;
     }
@@ -47,6 +57,7 @@ public class Movie implements Comparable<Movie> {
         return name;
     }
 
+//    @XmlElement
     public void setName(String name) {
         this.name = name;
     }
@@ -55,6 +66,7 @@ public class Movie implements Comparable<Movie> {
         return coordinates;
     }
 
+//    @XmlElement
     public void setCoordinates(Coordinates coordinates) {
         this.coordinates = coordinates;
     }
@@ -63,6 +75,7 @@ public class Movie implements Comparable<Movie> {
         return creationDate;
     }
 
+//    @XmlElement
     public void setCreationDate(java.util.Date creationDate) {
         this.creationDate = creationDate;
     }
@@ -71,6 +84,7 @@ public class Movie implements Comparable<Movie> {
         return oscarsCount;
     }
 
+//    @XmlElement
     public void setOscarsCount(Long oscarsCount) {
         this.oscarsCount = oscarsCount;
     }
@@ -79,6 +93,7 @@ public class Movie implements Comparable<Movie> {
         return budget;
     }
 
+//    @XmlElement
     public void setBudget(long budget) {
         this.budget = budget;
     }
@@ -86,7 +101,8 @@ public class Movie implements Comparable<Movie> {
     public String getTagline() {
         return tagline;
     }
-
+//
+//    @XmlElement
     public void setTagline(String tagline) {
         this.tagline = tagline;
     }
@@ -95,6 +111,7 @@ public class Movie implements Comparable<Movie> {
         return mpaaRating;
     }
 
+//    @XmlElement
     public void setMpaaRating(MpaaRating mpaaRating) {
         this.mpaaRating = mpaaRating;
     }
@@ -103,6 +120,7 @@ public class Movie implements Comparable<Movie> {
         return screenwriter;
     }
 
+//    @XmlElement
     public void setScreenwriter(Person screenwriter) {
         this.screenwriter = screenwriter;
     }

@@ -1,5 +1,6 @@
 package com.github.anth0o0ny.programming_lab5.baseclasses;
 
+
 public class Coordinates {
     private Double x; //Максимальное значение поля: 398, Поле не может быть null
     private Float y; //Поле не может быть null
@@ -8,7 +9,7 @@ public class Coordinates {
         setX(x);
         setY(y);
     }
-
+    public Coordinates(){}
     public Double getX() {
         return x;
     }

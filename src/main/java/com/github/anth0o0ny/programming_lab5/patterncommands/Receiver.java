@@ -150,8 +150,6 @@ public class Receiver {
 
         for (Movie movie : collection) {
 
-
-
             if (String.valueOf(movie.getId()).equals(argument)) {
 
                   long id = movie.getId();
