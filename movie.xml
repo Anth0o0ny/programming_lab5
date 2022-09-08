@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<movies>
+    <movie>
+        <budget>888</budget>
+        <coordinates>
+            <x>4.0</x>
+            <y>5.0</y>
+        </coordinates>
+        <creationDate>2022-09-05T02:39:37.062+03:00</creationDate>
+        <id>381538636</id>
+        <mpaaRating>NC_17</mpaaRating>
+        <name>Forrest Gump</name>
+        <oscarsCount>9</oscarsCount>
+        <screenwriter>
+            <hairColor>BLACK</hairColor>
+            <height>6.0</height>
+            <name>Tom Hanks</name>
+            <nationality>GERMANY</nationality>
+        </screenwriter>
+        <tagline>The story of a life.</tagline>
+    </movie>
+    <movie>
+        <budget>888</budget>
+        <coordinates>
+            <x>4.0</x>
+            <y>5.0</y>
+        </coordinates>
+        <creationDate>2022-09-05T02:39:37.062+03:00</creationDate>
+        <id>123456789</id>
+        <mpaaRating>NC_17</mpaaRating>
+        <name>I am legend</name>
+        <oscarsCount>9</oscarsCount>
+        <screenwriter>
+            <hairColor>BLACK</hairColor>
+            <height>6.0</height>
+            <name>Will Smith</name>
+            <nationality>GERMANY</nationality>
+        </screenwriter>
+        <tagline>Welcome to earth. Population 1.</tagline>
+    </movie>
+</movies>
+
