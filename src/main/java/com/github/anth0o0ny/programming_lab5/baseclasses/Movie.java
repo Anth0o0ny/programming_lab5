@@ -33,7 +33,6 @@ public class Movie implements Comparable<Movie> {
     public Movie(){}
 
 
-
     @Override
     public int compareTo(Movie movie) {
         return (this.getName().compareTo(movie.getName()));
@@ -48,7 +47,6 @@ public class Movie implements Comparable<Movie> {
         return id;
     }
 
-//    @XmlElement
     public void setId(long id) {
         this.id = id;
     }
@@ -57,7 +55,6 @@ public class Movie implements Comparable<Movie> {
         return name;
     }
 
-//    @XmlElement
     public void setName(String name) {
         this.name = name;
     }
@@ -66,7 +63,6 @@ public class Movie implements Comparable<Movie> {
         return coordinates;
     }
 
-//    @XmlElement
     public void setCoordinates(Coordinates coordinates) {
         this.coordinates = coordinates;
     }
@@ -75,7 +71,6 @@ public class Movie implements Comparable<Movie> {
         return creationDate;
     }
 
-//    @XmlElement
     public void setCreationDate(java.util.Date creationDate) {
         this.creationDate = creationDate;
     }
@@ -84,7 +79,6 @@ public class Movie implements Comparable<Movie> {
         return oscarsCount;
     }
 
-//    @XmlElement
     public void setOscarsCount(Long oscarsCount) {
         this.oscarsCount = oscarsCount;
     }
@@ -93,7 +87,6 @@ public class Movie implements Comparable<Movie> {
         return budget;
     }
 
-//    @XmlElement
     public void setBudget(long budget) {
         this.budget = budget;
     }
@@ -101,8 +94,7 @@ public class Movie implements Comparable<Movie> {
     public String getTagline() {
         return tagline;
     }
-//
-//    @XmlElement
+
     public void setTagline(String tagline) {
         this.tagline = tagline;
     }
@@ -111,7 +103,6 @@ public class Movie implements Comparable<Movie> {
         return mpaaRating;
     }
 
-//    @XmlElement
     public void setMpaaRating(MpaaRating mpaaRating) {
         this.mpaaRating = mpaaRating;
     }
@@ -120,7 +111,6 @@ public class Movie implements Comparable<Movie> {
         return screenwriter;
     }
 
-//    @XmlElement
     public void setScreenwriter(Person screenwriter) {
         this.screenwriter = screenwriter;
     }

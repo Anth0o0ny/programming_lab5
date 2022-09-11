@@ -17,7 +17,8 @@ public class Person {
         setNationality(nationality);
     }
 
-    public Person(){}
+    public Person() {
+    }
 
     @Override
     public String toString() {
@@ -64,11 +65,38 @@ public class Person {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Введите имя персонажа: ");
-        String name = sc.nextLine();
+//        System.out.println("Введите имя персонажа: ");
+//        String name = sc.nextLine();
+        String name;
+        do {
+            System.out.println("Введите имя персонажа: ");
+            try {
+                name = sc.nextLine();
+                if (name.isEmpty()) {
+                    throw new RuntimeException();
+                }
+            } catch (RuntimeException ex) {
+                System.out.println("Значение поля \"name\" можeт быть равно null или быть пустым");
+                name = null;
+            }
+        } while (name == null);
 
-        System.out.println("Введите рост персонажа: ");
-        float height = sc.nextFloat();
+//        System.out.println("Введите рост персонажа: ");
+//        float height = sc.nextFloat();
+        float height;
+        do {
+            System.out.println("Введите рост персонажа: ");
+            String inp = sc.nextLine();
+            try {
+                height = Float.parseFloat(inp);
+                if (height <= 0) {
+                    throw new NumberFormatException();
+                }
+            } catch (NumberFormatException ex) {
+                System.out.println("Количество оскаров должно быть long и его значение должно быть больше 0");
+                height = 0;
+            }
+        } while (height == 0);
 
         Color color = Color.chooseColore();
 

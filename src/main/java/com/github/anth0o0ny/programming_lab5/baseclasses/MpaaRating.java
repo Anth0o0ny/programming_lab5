@@ -19,15 +19,28 @@ public enum MpaaRating {
     public static MpaaRating chooseRating() {
 
         Scanner sc = new Scanner(System.in);
+        byte rateNum;
+        MpaaRating res = null;
+        do {
+            System.out.println("Выберете рейтинг фильма : ");
+            for (byte i = 0; MpaaRating.values().length > i; i++) {
+                System.out.println((i + 1) + ". " + MpaaRating.values()[i]);
+            }
+            String inp = sc.nextLine();
 
-        System.out.println("Выберете рейтинг фильма : ");
-
-        for (byte i = 0; MpaaRating.values().length > i; i++) {
-            System.out.println((i + 1) + ". " + MpaaRating.values()[i]);
+            try {
+                rateNum = Byte.parseByte(inp);
+                res = MpaaRating.values()[rateNum - 1];
+            } catch (ArrayIndexOutOfBoundsException ex) {
+                System.out.println("Должно быть введен порядковый номер соответсвующего рейтинга");
+                rateNum = 0;
+            } catch (NumberFormatException ex) {
+                System.out.println("Должно быть введен порядковый номер соответсвующего рейтинга");
+                rateNum = 0;
+            }
         }
-
-        byte rateNum = sc.nextByte();
-        return MpaaRating.values()[rateNum - 1];
+        while (rateNum == 0);
+        return res;
     }
 
     @Override

@@ -19,15 +19,28 @@ public enum Color {
     public static Color chooseColore() {
 
         Scanner sc = new Scanner(System.in);
+        byte colorNum;
+        Color res = null;
 
-        System.out.println("Выберете цвет волос персонажа : ");
+        do {
+            System.out.println("Выберете цвет волос персонажа : ");
+            for (byte i = 0; Color.values().length > i; i++) {
+                System.out.println((i + 1) + ". " + Color.values()[i]);
+            }
+            String inp = sc.nextLine();
+            try {
+                colorNum = Byte.parseByte(inp);
+                res = Color.values()[colorNum - 1];
+            } catch (ArrayIndexOutOfBoundsException ex) {
+                System.out.println("Должно быть введен порядковый номер соответсвующего цвета волос");
+                colorNum = 0;
+            } catch (NumberFormatException ex) {
+                System.out.println("Должно быть введен порядковый номер соответсвующего цвета волос");
+                colorNum = 0;
+            }
+        } while (colorNum == 0);
 
-        for (byte i = 0; Color.values().length > i; i++) {
-            System.out.println((i + 1) + ". " + Color.values()[i]);
-        }
-
-        byte colorNum = sc.nextByte();
-        return Color.values()[colorNum - 1];
+        return res;
     }
 
     @Override

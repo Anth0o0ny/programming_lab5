@@ -19,15 +19,27 @@ public enum Country {
     public static Country chooseCountry() {
 
         Scanner sc = new Scanner(System.in);
-
-        System.out.println("Выберете гражданство персонажа : ");
-
-        for (byte i = 0; Country.values().length > i; i++) {
-            System.out.println((i + 1) + ". " + Country.values()[i]);
+        byte countryNum;
+        Country res = null;
+        do {
+            System.out.println("Выберете гражданство персонажа : ");
+            for (byte i = 0; Country.values().length > i; i++) {
+                System.out.println((i + 1) + ". " + Country.values()[i]);
+            }
+            String inp = sc.nextLine();
+            try {
+                countryNum = Byte.parseByte(inp);
+                res = Country.values()[countryNum - 1];
+            } catch (ArrayIndexOutOfBoundsException ex) {
+                System.out.println("Должно быть введен порядковый номер соответсвующей страны");
+                countryNum = 0;
+            } catch (NumberFormatException ex) {
+                System.out.println("Должно быть введен порядковый номер соответсвующей страны");
+                countryNum = 0;
+            }
         }
-
-        byte countryNum = sc.nextByte();
-        return Country.values()[countryNum - 1];
+        while (countryNum == 0);
+        return res;
 
     }
 
@@ -35,4 +47,5 @@ public enum Country {
     public String toString() {
         return title;
     }
+
 }
