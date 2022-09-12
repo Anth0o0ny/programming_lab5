@@ -62,17 +62,14 @@ public class InputTerminal {
     }
 
     protected String lineParseToCommand(String line) throws JAXBException {
-        while (line.contains(" ")) {
-            line = line.replace("  ", " ");
-        }
+
         String[] cmdline = line.trim().split(" ");
+        String command = cmdline[0].trim();
         if (cmdline.length == 1) {
-            String command = cmdline[0];
             output = invoker.execute(invoker, command, moviesCollection.getCollection(), "", moviesCollection);
             return output;
         } else if (cmdline.length == 2) {
-            String command = line.trim().split(" ")[0];
-            String argument = line.trim().split(" ")[1];
+            String argument = cmdline[1];
             output = invoker.execute(invoker, command, moviesCollection.getCollection(), argument, moviesCollection);
             return output;
         } else {
