@@ -8,14 +8,14 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 
-public class InputTerminal {
+public class Terminal {
 
     Scanner scanner;
     private final Invoker invoker;
     private final MoviesCollection moviesCollection;
     private String output;
 
-    public InputTerminal(Invoker invoker, MoviesCollection moviesCollection) {
+    public Terminal(Invoker invoker, MoviesCollection moviesCollection) {
         this.invoker = invoker;
         this.moviesCollection = moviesCollection;
     }

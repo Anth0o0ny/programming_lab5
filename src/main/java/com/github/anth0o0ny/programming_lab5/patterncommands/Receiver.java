@@ -2,7 +2,7 @@ package com.github.anth0o0ny.programming_lab5.patterncommands;
 
 
 
-import com.github.anth0o0ny.programming_lab5.InputTerminal;
+import com.github.anth0o0ny.programming_lab5.Terminal;
 import com.github.anth0o0ny.programming_lab5.MoviesCollection;
 import com.github.anth0o0ny.programming_lab5.Parser;
 import com.github.anth0o0ny.programming_lab5.baseclasses.Movie;
@@ -198,7 +198,7 @@ public class Receiver {
     }
 
     public String executeScript(Invoker invoker, MoviesCollection moviesCollection, String argument) throws FileNotFoundException {
-        InputTerminal inp = new InputTerminal(invoker, moviesCollection);
+        Terminal inp = new Terminal(invoker, moviesCollection);
         return inp.startFile(argument);
     }
 }

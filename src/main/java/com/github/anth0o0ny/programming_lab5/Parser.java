@@ -13,9 +13,9 @@ public class Parser {
     static StringBuilder sb = new StringBuilder();
     static String res;
 
-    public static void parsingToObj(Stack<Movie> collection) {
+    public static void parsingToObj(Stack<Movie> collection, String pathToFile) {
 
-        File file = new File("movie.xml");
+        File file = new File(pathToFile);
 
         try (BufferedInputStream bis = new BufferedInputStream(new FileInputStream(file))) {
             int symb;
