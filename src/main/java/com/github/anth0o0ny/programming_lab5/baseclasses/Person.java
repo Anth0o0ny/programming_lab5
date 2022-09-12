@@ -1,5 +1,7 @@
 package com.github.anth0o0ny.programming_lab5.baseclasses;
 
+import com.github.anth0o0ny.programming_lab5.movieMaking.InputArgumentTester;
+
 import javax.xml.bind.annotation.XmlElement;
 import java.util.Scanner;
 
@@ -63,45 +65,12 @@ public class Person {
 
     public static Person ctreatePerson() {
 
-        Scanner sc = new Scanner(System.in);
+        InputArgumentTester iat = new InputArgumentTester();
 
-//        System.out.println("Введите имя персонажа: ");
-//        String name = sc.nextLine();
-        String name;
-        do {
-            System.out.println("Введите имя персонажа: ");
-            try {
-                name = sc.nextLine();
-                if (name.isEmpty()) {
-                    throw new RuntimeException();
-                }
-            } catch (RuntimeException ex) {
-                System.out.println("Значение поля \"name\" можeт быть равно null или быть пустым");
-                name = null;
-            }
-        } while (name == null);
-
-//        System.out.println("Введите рост персонажа: ");
-//        float height = sc.nextFloat();
-        float height;
-        do {
-            System.out.println("Введите рост персонажа: ");
-            String inp = sc.nextLine();
-            try {
-                height = Float.parseFloat(inp);
-                if (height <= 0) {
-                    throw new NumberFormatException();
-                }
-            } catch (NumberFormatException ex) {
-                System.out.println("Количество оскаров должно быть long и его значение должно быть больше 0");
-                height = 0;
-            }
-        } while (height == 0);
-
-        Color color = Color.chooseColore();
+        Color color = Color.chooseColor();
 
         Country country = Country.chooseCountry();
 
-        return new Person(name, height, color, country);
+        return new Person(iat.assignInputPersonName(), iat.assignInputHeight(), color, country);
     }
 }

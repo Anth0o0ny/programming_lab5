@@ -1,5 +1,7 @@
 package com.github.anth0o0ny.programming_lab5.baseclasses;
 
+import com.github.anth0o0ny.programming_lab5.movieMaking.InputArgumentTester;
+
 import java.util.Scanner;
 
 public enum Color {
@@ -16,31 +18,10 @@ public enum Color {
         this.title = title;
     }
 
-    public static Color chooseColore() {
+    public static Color chooseColor() {
+        InputArgumentTester iat = new InputArgumentTester();
+        return iat.assignInputColor();
 
-        Scanner sc = new Scanner(System.in);
-        byte colorNum;
-        Color res = null;
-
-        do {
-            System.out.println("Выберете цвет волос персонажа : ");
-            for (byte i = 0; Color.values().length > i; i++) {
-                System.out.println((i + 1) + ". " + Color.values()[i]);
-            }
-            String inp = sc.nextLine();
-            try {
-                colorNum = Byte.parseByte(inp);
-                res = Color.values()[colorNum - 1];
-            } catch (ArrayIndexOutOfBoundsException ex) {
-                System.out.println("Должно быть введен порядковый номер соответсвующего цвета волос");
-                colorNum = 0;
-            } catch (NumberFormatException ex) {
-                System.out.println("Должно быть введен порядковый номер соответсвующего цвета волос");
-                colorNum = 0;
-            }
-        } while (colorNum == 0);
-
-        return res;
     }
 
     @Override
