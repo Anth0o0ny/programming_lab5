@@ -6,20 +6,19 @@ import com.github.anth0o0ny.programming_lab5.patterncommands.Command;
 import com.github.anth0o0ny.programming_lab5.patterncommands.Invoker;
 import com.github.anth0o0ny.programming_lab5.patterncommands.Receiver;
 
+import javax.xml.bind.JAXBException;
 import java.util.Stack;
 
-public class Info implements Command {
-
+public class Save implements Command {
     private final Receiver receiver;
 
-    public Info(Receiver receiver) {
+    public Save(Receiver receiver) {
         this.receiver = receiver;
     }
-
     @Override
-    public String execute(Invoker invoker, Stack<Movie> collection, String argument, MoviesCollection moviesCollection) {
+    public String execute(Invoker invoker, Stack<Movie> collection, String argument, MoviesCollection moviesCollection) throws JAXBException {
         if (argument.isEmpty()) {
-            return receiver.info(collection);
+            return receiver.save(moviesCollection);
         } else {
             return "Введите команду без аргумента.";
         }
@@ -27,6 +26,6 @@ public class Info implements Command {
 
     @Override
     public String getHelp() {
-        return "Введите \"info\", чтобы получить информацию о коллекции.";
+        return "Введите save, чтобы сохранить коллекцию в файл";
     }
 }

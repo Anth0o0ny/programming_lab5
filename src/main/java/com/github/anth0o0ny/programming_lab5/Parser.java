@@ -4,6 +4,7 @@ import com.github.anth0o0ny.programming_lab5.baseclasses.Movie;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import java.io.*;
 import java.util.Stack;
@@ -11,8 +12,9 @@ import java.util.Stack;
 public class Parser {
     static StringBuilder sb = new StringBuilder();
     static String res;
+    static String outRes;
 
-    public static void parsing(Stack<Movie> collection) {
+    public static void parsingToObj(Stack<Movie> collection) {
 
         File file = new File("movie.xml");
 
@@ -41,6 +43,21 @@ public class Parser {
         } catch (JAXBException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void parsingToXml(MoviesCollection moviesCollection){
+        try {
+
+                JAXBContext context = JAXBContext.newInstance(MoviesCollection.class);
+                Marshaller mar = context.createMarshaller();
+                mar.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+                mar.marshal(moviesCollection, new FileOutputStream("test.xml"));
+
+
+
+        }catch(JAXBException | FileNotFoundException x){
+        x.printStackTrace();
+            }
     }
 
 

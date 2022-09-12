@@ -20,5 +20,6 @@ public class CommandsRegistration {
         invoker.registration("add_if_min", new AddIfMin(receiver));
         invoker.registration("update", new UpdateById(receiver));
         invoker.registration("insert_at", new InsertAt(receiver));
+        invoker.registration("save", new Save(receiver));
     }
 }

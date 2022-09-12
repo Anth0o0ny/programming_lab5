@@ -1,6 +1,8 @@
 package com.github.anth0o0ny.programming_lab5.patterncommands;
 
 
+import com.github.anth0o0ny.programming_lab5.MoviesCollection;
+import com.github.anth0o0ny.programming_lab5.Parser;
 import com.github.anth0o0ny.programming_lab5.baseclasses.Movie;
 import com.github.anth0o0ny.programming_lab5.movieMaking.AddMovie;
 
@@ -182,6 +184,10 @@ public class Receiver {
             str = "Введен некорректный индекс";
         }
         return str;
+    }
+    public String save(MoviesCollection moviesCollection){
+        Parser.parsingToXml(moviesCollection);
+        return "Коллекция успешно сохранена";
     }
 }
 

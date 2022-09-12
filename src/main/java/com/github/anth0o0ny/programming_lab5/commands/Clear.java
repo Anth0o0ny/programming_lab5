@@ -1,5 +1,6 @@
 package com.github.anth0o0ny.programming_lab5.commands;
 
+import com.github.anth0o0ny.programming_lab5.MoviesCollection;
 import com.github.anth0o0ny.programming_lab5.baseclasses.Movie;
 import com.github.anth0o0ny.programming_lab5.patterncommands.Command;
 import com.github.anth0o0ny.programming_lab5.patterncommands.Invoker;
@@ -16,7 +17,7 @@ public class Clear implements Command {
     }
 
     @Override
-    public String execute(Invoker invoker, Stack<Movie> collection, String argument) {
+    public String execute(Invoker invoker, Stack<Movie> collection, String argument, MoviesCollection moviesCollection) {
         return receiver.clear(collection);
     }
 
