@@ -21,5 +21,6 @@ public class CommandsRegistration {
         invoker.registration("update", new UpdateById(receiver));
         invoker.registration("insert_at", new InsertAt(receiver));
         invoker.registration("save", new Save(receiver));
+        invoker.registration("execute_script", new ExecuteScript(receiver));
     }
 }
