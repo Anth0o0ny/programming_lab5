@@ -177,14 +177,18 @@ public class Receiver {
 
         String str;
         int index = Integer.parseInt(argument);
-
-        if ((collection.size() - index > 0)){
-            Movie updateMovie = AddMovie.makeMovie();
-            collection.insertElementAt(updateMovie,index);
-
-            str = "Элемент внесен в коллекцию";
-        } else{
+        if (index < 0 ){
             str = "Введен некорректный индекс";
+        }else{
+            if ((collection.size() - index > 0)){
+                Movie updateMovie = AddMovie.makeMovie();
+                collection.insertElementAt(updateMovie,index);
+
+                str = "Элемент внесен в коллекцию";
+            } else{
+                str = "Введен некорректный индекс";
+            }
+
         }
         return str;
     }

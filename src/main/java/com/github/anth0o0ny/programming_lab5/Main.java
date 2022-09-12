@@ -4,8 +4,7 @@ package com.github.anth0o0ny.programming_lab5;
 import com.github.anth0o0ny.programming_lab5.patterncommands.Invoker;
 import com.github.anth0o0ny.programming_lab5.patterncommands.Receiver;
 
-import javax.xml.bind.JAXBException;
-import java.util.*;
+
 
 public class Main {
 

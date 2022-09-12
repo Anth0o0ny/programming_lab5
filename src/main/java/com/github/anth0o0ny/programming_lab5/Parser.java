@@ -12,7 +12,6 @@ import java.util.Stack;
 public class Parser {
     static StringBuilder sb = new StringBuilder();
     static String res;
-    static String outRes;
 
     public static void parsingToObj(Stack<Movie> collection) {
 
@@ -23,12 +22,9 @@ public class Parser {
             while ((symb = bis.read()) != -1) {
                 sb.append((char) symb);
             }
-            String fileStr = sb.toString();
-            res = fileStr;
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            res = sb.toString();
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Файл с входной коллекцией не найден или недостаточно прав.");;
         }
 
         JAXBContext jaxbContext;
@@ -51,12 +47,12 @@ public class Parser {
                 JAXBContext context = JAXBContext.newInstance(MoviesCollection.class);
                 Marshaller mar = context.createMarshaller();
                 mar.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-                mar.marshal(moviesCollection, new FileOutputStream("test.xml"));
+                mar.marshal(moviesCollection, new FileOutputStream("movie.xml"));
 
 
 
         }catch(JAXBException | FileNotFoundException x){
-        x.printStackTrace();
+            System.out.println("Файл не найден.");;
             }
     }
 

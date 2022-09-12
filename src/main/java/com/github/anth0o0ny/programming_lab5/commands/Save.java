@@ -26,6 +26,6 @@ public class Save implements Command {
 
     @Override
     public String getHelp() {
-        return "Введите save, чтобы сохранить коллекцию в файл";
+        return "Введите \"save\", чтобы сохранить коллекцию в файл";
     }
 }

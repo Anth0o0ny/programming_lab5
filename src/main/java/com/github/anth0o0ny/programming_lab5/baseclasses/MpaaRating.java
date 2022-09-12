@@ -2,7 +2,6 @@ package com.github.anth0o0ny.programming_lab5.baseclasses;
 
 import com.github.anth0o0ny.programming_lab5.movieMaking.InputArgumentTester;
 
-import java.util.Scanner;
 
 public enum MpaaRating {
 

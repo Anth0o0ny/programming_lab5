@@ -3,7 +3,6 @@ package com.github.anth0o0ny.programming_lab5.baseclasses;
 import com.github.anth0o0ny.programming_lab5.movieMaking.InputArgumentTester;
 
 import javax.xml.bind.annotation.XmlElement;
-import java.util.Scanner;
 
 public class Person {
 

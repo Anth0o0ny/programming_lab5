@@ -5,7 +5,6 @@ import com.github.anth0o0ny.programming_lab5.patterncommands.Invoker;
 import javax.xml.bind.JAXBException;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 
