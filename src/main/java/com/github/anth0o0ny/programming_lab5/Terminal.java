@@ -44,7 +44,9 @@ public class Terminal {
     protected void inputKeyboard() {
         this.scanner = new Scanner(System.in);
 
-        System.out.println("Для вывода справки по командам введите help.");
+        String helping = "Для вывода справки по командам введите help.";
+        System.out.println(helping);
+
         while (true) {
             System.out.println("Введите команду:");
             String commandLine = scanner.nextLine();
