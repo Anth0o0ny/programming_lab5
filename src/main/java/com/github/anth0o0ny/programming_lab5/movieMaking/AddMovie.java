@@ -1,5 +1,6 @@
 package com.github.anth0o0ny.programming_lab5.movieMaking;
 
+import com.github.anth0o0ny.programming_lab5.IdGenerator;
 import com.github.anth0o0ny.programming_lab5.baseclasses.Coordinates;
 import com.github.anth0o0ny.programming_lab5.baseclasses.Movie;
 import com.github.anth0o0ny.programming_lab5.baseclasses.MpaaRating;
@@ -8,6 +9,11 @@ import com.github.anth0o0ny.programming_lab5.baseclasses.Person;
 import java.util.*;
 
 public class AddMovie {
+
+    private static IdGenerator idGenerator;
+    public static void setIdGenerator(IdGenerator idGenerator){
+        AddMovie.idGenerator = idGenerator;
+    }
 
     public static String addMovie(Stack<Movie> collection) {
         Movie makingMovie = makeMovie();
@@ -28,8 +34,8 @@ public class AddMovie {
     public static Movie makeMovie() {
 
         InputArgumentTester iat = new InputArgumentTester();
-        long id = (long) (Math.random() * 1_000_000_000 + 1);
 
+        long id = idGenerator.generateId();
         String name = iat.assignInputName() ;
         Double x = iat.assignInputX();
         Float y = iat.assignInputY();

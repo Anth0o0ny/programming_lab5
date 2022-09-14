@@ -1,6 +1,7 @@
 package com.github.anth0o0ny.programming_lab5;
 
 import com.github.anth0o0ny.programming_lab5.baseclasses.Movie;
+import com.github.anth0o0ny.programming_lab5.movieMaking.AddMovie;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -12,6 +13,7 @@ import java.util.Stack;
 public class Parser {
     static StringBuilder sb = new StringBuilder();
     static String res;
+
 
     public static void parsingToObj(Stack<Movie> collection, String pathToFile) {
 
@@ -36,8 +38,10 @@ public class Parser {
             for (Movie movie : moviesCollection.getCollection()) {
                 collection.push(movie);
             }
+            AddMovie.setIdGenerator(new IdGenerator(moviesCollection.getCollection()));
+//
         } catch (JAXBException e) {
-            e.printStackTrace();
+            System.out.println("Не удалось распарсить");;
         }
     }
 
