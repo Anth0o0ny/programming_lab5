@@ -26,7 +26,8 @@ public class Parser {
             }
             res = sb.toString();
         } catch (IOException e) {
-            System.out.println("Файл с входной коллекцией не найден или недостаточно прав.");;
+            System.out.println("Файл с входной коллекцией не найден или недостаточно прав.");
+
         }
 
         JAXBContext jaxbContext;
@@ -39,25 +40,25 @@ public class Parser {
                 collection.push(movie);
             }
             AddMovie.setIdGenerator(new IdGenerator(moviesCollection.getCollection()));
-//
         } catch (JAXBException e) {
-            System.out.println("Не удалось распарсить");;
+            System.out.println("Не удалось распарсить");
+            AddMovie.setIdGenerator(new IdGenerator(new MoviesCollection().getCollection()));
         }
     }
 
     public static void parsingToXml(MoviesCollection moviesCollection){
         try {
 
-                JAXBContext context = JAXBContext.newInstance(MoviesCollection.class);
-                Marshaller mar = context.createMarshaller();
-                mar.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-                mar.marshal(moviesCollection, new FileOutputStream("movie.xml"));
+            JAXBContext context = JAXBContext.newInstance(MoviesCollection.class);
+            Marshaller mar = context.createMarshaller();
+            mar.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+            mar.marshal(moviesCollection, new FileOutputStream("movie.xml"));
 
 
 
         }catch(JAXBException | FileNotFoundException x){
-            System.out.println("Файл не найден.");;
-            }
+            System.out.println("Файл не найден.");
+        }
     }
 
 

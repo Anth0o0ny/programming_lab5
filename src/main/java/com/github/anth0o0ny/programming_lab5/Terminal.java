@@ -56,8 +56,10 @@ public class Terminal {
                     break;
                 }
                 System.out.println(output);
-            } catch (NullPointerException | JAXBException e) {
+            } catch (NullPointerException ex) {
                 System.out.println("Команды не существует");
+            } catch (JAXBException e) {
+                System.out.println("Не удалось распарсить");;
             }
         }
     }
