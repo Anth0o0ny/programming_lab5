@@ -7,9 +7,12 @@ import com.github.anth0o0ny.programming_lab5.baseclasses.Movie;
 import com.github.anth0o0ny.programming_lab5.commands.*;
 
 import javax.xml.bind.JAXBException;
+import java.util.ArrayList;
 import java.util.HashMap;
 
+import java.util.Optional;
 import java.util.Stack;
+import java.util.function.Consumer;
 
 public class Invoker {
     private final HashMap<String, Command> commandsMap = new HashMap<>();
@@ -18,18 +21,25 @@ public class Invoker {
         commandsMap.put(commandName, command);
     }
 
-
-
     public String execute(Invoker invoker, String commandName, Stack<Movie> collection, String argument, MoviesCollection moviesCollection) throws JAXBException {
         if (!commandsMap.containsKey(commandName)) {
             return StringConstants.PatternCommands.INVOKER_WRONG_COMMAND;
         }
-
-
         Command command = commandsMap.get(commandName);
-
         return command.execute(invoker, collection, argument, moviesCollection);
     }
+
+    public HashMap<String, Command> getCommandMap() {
+        return this.commandsMap;
+    }
+
+    public Invoker(Receiver receiver){
+        for (CommandsEnum commandsEnum : CommandsEnum.values()){
+            Optional<Command> optional = Optional.ofNullable(create(receiver, commandsEnum));
+            optional.ifPresent(command -> registration(commandsEnum.commandName, command));
+        }
+    }
+
     private Command create(Receiver receiver, CommandsEnum commandsEnum) {
         switch (commandsEnum){
             case HELP:
@@ -66,9 +76,5 @@ public class Invoker {
                 return (new PrintDescending(receiver));
         }
         return null;
-    }
-
-    public HashMap<String, Command> getCommandMap() {
-        return this.commandsMap;
     }
 }
