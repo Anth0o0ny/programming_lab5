@@ -1,6 +1,6 @@
 package com.github.anth0o0ny.programming_lab5.baseclasses;
 
-import com.github.anth0o0ny.programming_lab5.movieMaking.InputArgumentTester;
+import com.github.anth0o0ny.programming_lab5.moviemaking.InputArgumentTester;
 
 
 public enum Country {

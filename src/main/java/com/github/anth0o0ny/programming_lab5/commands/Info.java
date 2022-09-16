@@ -1,5 +1,6 @@
 package com.github.anth0o0ny.programming_lab5.commands;
 
+import com.github.anth0o0ny.programming_lab5.CommandsEnum;
 import com.github.anth0o0ny.programming_lab5.StringConstants;
 import com.github.anth0o0ny.programming_lab5.baseclasses.MoviesCollection;
 import com.github.anth0o0ny.programming_lab5.baseclasses.Movie;
@@ -28,6 +29,6 @@ public class Info implements Command {
 
     @Override
     public String getHelp() {
-        return StringConstants.Commands.INFO_HELP;
+        return CommandsEnum.INFO.commandName + " : " + StringConstants.Commands.INFO_HELP;
     }
 }

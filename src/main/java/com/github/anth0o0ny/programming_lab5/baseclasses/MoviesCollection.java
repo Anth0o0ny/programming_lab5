@@ -1,6 +1,5 @@
-package com.github.anth0o0ny.programming_lab5;
+package com.github.anth0o0ny.programming_lab5.baseclasses;
 
-import com.github.anth0o0ny.programming_lab5.baseclasses.Movie;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;

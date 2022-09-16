@@ -1,9 +1,7 @@
-package com.github.anth0o0ny.programming_lab5;
+package com.github.anth0o0ny.programming_lab5.moviemaking;
 
 import com.github.anth0o0ny.programming_lab5.baseclasses.Movie;
-import sun.reflect.generics.tree.Tree;
 
-import javax.swing.event.TreeSelectionEvent;
 import java.util.*;
 
 public class IdGenerator {
