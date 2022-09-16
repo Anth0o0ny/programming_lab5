@@ -1,6 +1,8 @@
 package com.github.anth0o0ny.programming_lab5.commands;
 
-import com.github.anth0o0ny.programming_lab5.MoviesCollection;
+import com.github.anth0o0ny.programming_lab5.CommandsEnum;
+import com.github.anth0o0ny.programming_lab5.StringConstants;
+import com.github.anth0o0ny.programming_lab5.baseclasses.MoviesCollection;
 import com.github.anth0o0ny.programming_lab5.baseclasses.Movie;
 import com.github.anth0o0ny.programming_lab5.patterncommands.Command;
 import com.github.anth0o0ny.programming_lab5.patterncommands.Invoker;
@@ -25,21 +27,21 @@ public class ExecuteScript implements Command {
     @Override
     public String execute(Invoker invoker, Stack<Movie> collection, String argument, MoviesCollection moviesCollection) throws JAXBException {
         if (argument.isEmpty()) {
-            return "Передайте название файла";
+            return StringConstants.Commands.EXECUTE_ENTER_FILENAME;
         } else if (new File(argument).isDirectory()) {
-            return "Передана директория";
+            return StringConstants.Commands.EXECUTE_IS_DIRECTORY;
         } else {
             String filePath = new File(argument).getAbsolutePath();
             if (files.contains(filePath)) {
                 files.clear();
-                return "Обнаружен рекурсия";
+                return StringConstants.Commands.EXECUTE_RECURSION;
             } else {
                 files.add(filePath);
                 try {
                     return receiver.executeScript(invoker, moviesCollection, argument);
-                }catch (FileNotFoundException ex){
-                    return "Файл не найден";
-                }finally {
+                } catch (FileNotFoundException ex) {
+                    return StringConstants.Commands.EXECUTE_FILE_NOT_EXISTS;
+                } finally {
                     files.clear();
                 }
 
@@ -49,6 +51,6 @@ public class ExecuteScript implements Command {
 
     @Override
     public String getHelp() {
-        return "Введите \"execute_script file_name\" , чтобы считать и исполнить скрипт из указанного файла.";
+        return CommandsEnum.EXECUTE_SCRIPT.commandName + " file_name : " + StringConstants.Commands.EXECUTE_SCRIPT_HELP;
     }
 }

@@ -1,6 +1,8 @@
 package com.github.anth0o0ny.programming_lab5.commands;
 
-import com.github.anth0o0ny.programming_lab5.MoviesCollection;
+import com.github.anth0o0ny.programming_lab5.CommandsEnum;
+import com.github.anth0o0ny.programming_lab5.StringConstants;
+import com.github.anth0o0ny.programming_lab5.baseclasses.MoviesCollection;
 import com.github.anth0o0ny.programming_lab5.baseclasses.Movie;
 import com.github.anth0o0ny.programming_lab5.patterncommands.Command;
 import com.github.anth0o0ny.programming_lab5.patterncommands.Invoker;
@@ -21,12 +23,12 @@ public class RemoveById implements Command {
         if (!argument.isEmpty()) {
             return receiver.removeById(collection, argument);
         } else {
-            return "Введите команду c аргументом.";
+            return StringConstants.Commands.CMD_WITH_ARG;
         }
     }
 
     @Override
     public String getHelp() {
-        return "Введите \"remove_by_id id\", чтобы удалить элемент из коллекции по его id.";
+        return CommandsEnum.REMOVE_BY_ID.commandName + " id : " + StringConstants.Commands.REMOVE_BY_ID_HELP;
     }
 }
