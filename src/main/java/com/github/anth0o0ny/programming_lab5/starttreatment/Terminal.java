@@ -1,5 +1,8 @@
-package com.github.anth0o0ny.programming_lab5;
+package com.github.anth0o0ny.programming_lab5.starttreatment;
 
+
+import com.github.anth0o0ny.programming_lab5.StringConstants;
+import com.github.anth0o0ny.programming_lab5.baseclasses.MoviesCollection;
 import com.github.anth0o0ny.programming_lab5.patterncommands.Invoker;
 
 import javax.xml.bind.JAXBException;
@@ -35,18 +38,19 @@ public class Terminal {
                 }
                 System.out.println(output);
             } catch (JAXBException e) {
-                return "В файле найдена несуществующая команда. Выполнение прекращено.";
+                return StringConstants.StartTreatment.EXECUTE_FAILED;
             }
         }
-        return "Выполнение файла " + file + " окончено.";
+        return StringConstants.StartTreatment.EXECUTE_ENDED;
     }
 
     protected void inputKeyboard() {
         this.scanner = new Scanner(System.in);
 
-        System.out.println("Для вывода справки по командам введите help.");
+        System.out.println(StringConstants.StartTreatment.START_HELPER);
+
         while (true) {
-            System.out.println("Введите команду:");
+            System.out.println(StringConstants.StartTreatment.ENTER_COMMAND);
             String commandLine = scanner.nextLine();
             try {
                 output = lineParseToCommand(commandLine);
@@ -54,8 +58,11 @@ public class Terminal {
                     break;
                 }
                 System.out.println(output);
-            } catch (NullPointerException | JAXBException e) {
-                System.out.println("Команды не существует");
+            } catch (NullPointerException ex) {
+                System.out.println(StringConstants.StartTreatment.COMMAND_NOT_EXISTS);
+            } catch (JAXBException e) {
+                System.out.println(StringConstants.StartTreatment.PARSE_FAILED);
+                ;
             }
         }
     }

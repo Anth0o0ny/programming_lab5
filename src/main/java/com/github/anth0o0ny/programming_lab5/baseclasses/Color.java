@@ -1,6 +1,6 @@
 package com.github.anth0o0ny.programming_lab5.baseclasses;
 
-import com.github.anth0o0ny.programming_lab5.movieMaking.InputArgumentTester;
+import com.github.anth0o0ny.programming_lab5.moviemaking.InputArgumentTester;
 
 
 
@@ -29,3 +29,6 @@ public enum Color {
         return title;
     }
 }
+//enum of comandRegistration
+// constant String(все стринги повестить в класс в соответсивии с переменными и передавать их в поля)
+// packets(норм переимеовать, без подчеркиваний)

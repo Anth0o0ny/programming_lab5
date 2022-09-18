@@ -1,6 +1,6 @@
 package com.github.anth0o0ny.programming_lab5.patterncommands;
 
-import com.github.anth0o0ny.programming_lab5.MoviesCollection;
+import com.github.anth0o0ny.programming_lab5.baseclasses.MoviesCollection;
 import com.github.anth0o0ny.programming_lab5.baseclasses.Movie;
 
 import javax.xml.bind.JAXBException;

@@ -1,6 +1,8 @@
 package com.github.anth0o0ny.programming_lab5.commands;
 
-import com.github.anth0o0ny.programming_lab5.MoviesCollection;
+import com.github.anth0o0ny.programming_lab5.CommandsEnum;
+import com.github.anth0o0ny.programming_lab5.StringConstants;
+import com.github.anth0o0ny.programming_lab5.baseclasses.MoviesCollection;
 import com.github.anth0o0ny.programming_lab5.baseclasses.Movie;
 import com.github.anth0o0ny.programming_lab5.patterncommands.Command;
 import com.github.anth0o0ny.programming_lab5.patterncommands.Invoker;
@@ -21,12 +23,12 @@ public class PrintDescending implements Command {
         if (argument.isEmpty()) {
             return receiver.printDescending(collection);
         } else {
-            return "Введите команду без аргумента.";
+            return StringConstants.Commands.CMD_WITHOUT_ARG;
         }
     }
 
     @Override
     public String getHelp() {
-        return "Введите \"print_descending\", чтобы вывести элементы коллекции в порядке убывания.";
+        return CommandsEnum.PRINT_DESCENDING.commandName + " : " + StringConstants.Commands.PRINT_DESCENDING_HELP;
     }
 }
